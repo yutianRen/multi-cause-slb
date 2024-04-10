@@ -44,37 +44,34 @@ capsize = 5
 
 data = pd.read_excel('multicause_results_plot.xlsx', sheet_name='esd+itm_v3_tV2_plot')
 
-a1 = []
-a2 = []
-a3 = []
-a4 = []
-a5 = []
+itm1 = []
+itm2 = []
+itm3 = []
+itm4 = []
+itm5 = []
 
 for i in range(25):
       baseline = data['itm0'][i]
-      a1.append((data['itm10'][i]-baseline))
-      a2.append((data['itm20'][i]-baseline))
-      a3.append((data['itm30'][i]-baseline))
-      a4.append((data['itm40'][i]-baseline))
-      a5.append((data['itm50'][i]-baseline))
-
-print('ave itm acc variation: ', sum(a1)/len(a1), sum(a2)/len(a2), sum(a3)/len(a3), sum(a4)/len(a4),
-      sum(a5)/len(a5))
+      itm1.append((data['itm10'][i]-baseline))
+      itm2.append((data['itm20'][i]-baseline))
+      itm3.append((data['itm30'][i]-baseline))
+      itm4.append((data['itm40'][i]-baseline))
+      itm5.append((data['itm50'][i]-baseline))
 
 
-b1 = []
-b2 = []
-b3 = []
-b4 = []
+esd1 = []
+esd2 = []
+esd3 = []
+esd4 = []
 
 for i in range(25):
       baseline = data['esd0'][i]
-      b1.append((data['esd2.5'][i]-baseline))
-      b2.append((data['esd5'][i]-baseline))
-      b3.append((data['esd7.5'][i]-baseline))
-      b4.append((data['esd10'][i]-baseline))
+      esd1.append((data['esd2.5'][i]-baseline))
+      esd2.append((data['esd5'][i]-baseline))
+      esd3.append((data['esd7.5'][i]-baseline))
+      esd4.append((data['esd10'][i]-baseline))
 
-print('ave esd acc variation: ', sum(b1)/len(b1), sum(b2)/len(b2), sum(b3)/len(b3), sum(b4)/len(b4))
+print('ave esd acc variation: ', sum(esd1)/len(esd1), sum(esd2)/len(esd2), sum(esd3)/len(esd3), sum(esd4)/len(esd4))
 
 
 ax1.plot(xaxis, data['esd0'], marker, label='noise=0.0%', lw=lw, ms=ms)
@@ -100,17 +97,12 @@ ax2.set_xlabel("No. dataset increment", fontsize=titlefont)
 xaxis_esd = [2.5, 5.0, 7.5, 10.0]
 xaxis_itm = [10, 20, 30, 40, 50]
 
-esd_ra = [sum(b1)/len(b1), sum(b2)/len(b2), sum(b3)/len(b3), sum(b4)/len(b4)]
-itm_ra = [sum(a1)/len(a1), sum(a2)/len(a2), sum(a3)/len(a3), sum(a4)/len(a4), sum(a5)/len(a5)]
-
-esd_std = [np.std(b1), np.std(b2), np.std(b3), np.std(b4)]
-itm_std = [np.std(a1), np.std(a2), np.std(a3), np.std(a4), np.std(a5)]
 
 ax3.xaxis.set_ticks(xaxis_esd)
 ax4.xaxis.set_ticks(xaxis_itm)
 
-esd = np.array([b1, b2, b3, b4]).transpose()
-itm = np.array([a1, a2, a3, a4, a5]).transpose()
+esd = np.array([esd1, esd2, esd3, esd4]).transpose()
+itm = np.array([itm1, itm2, itm3, itm4, itm5]).transpose()
 
 
 ax3.boxplot(esd, positions=[2.5, 5.0, 7.5, 10.0], widths=0.6)

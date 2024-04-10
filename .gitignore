@@ -9,7 +9,7 @@ pkls/
 get_std.py
 deprecated/
 *.eps
-*result*
+*result*/
 rawdata_to_pkl.py
 *.pdf
 
