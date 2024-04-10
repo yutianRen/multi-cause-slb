@@ -1,0 +1,29 @@
+### JetBrains template
+# User-specific stuff
+#device_config.yaml
+
+*result*/
+output/
+pkls/
+*.sh
+get_std.py
+deprecated/
+*.eps
+*result*
+rawdata_to_pkl.py
+*.pdf
+
+.idea/
+# CMake
+cmake-build-*/
+# File-based project format
+*.iws
+# IntelliJ
+out/
+
+*pid*
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+#project log
+*.log

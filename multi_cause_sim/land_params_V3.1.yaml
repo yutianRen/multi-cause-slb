@@ -1,0 +1,9 @@
+max_frame: 600
+output_path: output/multicause_r100_early_stop_1500_w-1.5_s0
+num_sim: 1500
+rand_sleep_interval: 10
+apply_wind: True
+wind_mag: [-1.5, -1.5, -1.5]
+wind_torq: [0, 0, 0]
+scale: 100
+port: 8384
