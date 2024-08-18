@@ -7,7 +7,7 @@ simulation and experiments for the [paper](https://arxiv.org/abs/2404.05809).
 
 ## To run the experiments
 
-First, we need to download data from this [link](https://drive.google.com/drive/folders/1WE4xdZkfMeOvMEDjGWsLTWHKrMmv6Dl0?usp=drive_link).
+First, we need to download data from this [link](https://drive.google.com/drive/folders/16_TGalwFJDZDWyc-SkBY3i3aCJtYNJyf?usp=drive_link).
 
 Also, a conda environment is suggested to be created by running:
 ```
